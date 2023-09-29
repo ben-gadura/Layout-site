@@ -38,6 +38,14 @@
             this.lblCPF = new System.Windows.Forms.Label();
             this.mtextsenha = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cliente = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.senha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,20 +128,83 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Layout_site.Properties.Resources.ddfc87fa1fcb7f8fdf1e240327cc643b;
-            this.pictureBox1.Location = new System.Drawing.Point(327, 29);
+            this.pictureBox1.Image = global::Layout_site.Properties.Resources._1a56eaaaf78869d7c6e0e620b2b98394;
+            this.pictureBox1.Location = new System.Drawing.Point(303, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(535, 481);
+            this.pictureBox1.Size = new System.Drawing.Size(489, 481);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // cliente
+            // 
+            this.cliente.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.email,
+            this.nome,
+            this.senha,
+            this.cpf});
+            this.cliente.HideSelection = false;
+            this.cliente.LabelEdit = true;
+            this.cliente.Location = new System.Drawing.Point(12, 272);
+            this.cliente.Name = "cliente";
+            this.cliente.Size = new System.Drawing.Size(304, 109);
+            this.cliente.TabIndex = 13;
+            this.cliente.UseCompatibleStateImageBehavior = false;
+            this.cliente.View = System.Windows.Forms.View.Details;
+            this.cliente.SelectedIndexChanged += new System.EventHandler(this.cliente_SelectedIndexChanged);
+            this.cliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cliente_MouseDoubleClick_1);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "id";
+            // 
+            // email
+            // 
+            this.email.Text = "email";
+            // 
+            // nome
+            // 
+            this.nome.Text = "nome";
+            // 
+            // senha
+            // 
+            this.senha.Text = "senha";
+            // 
+            // cpf
+            // 
+            this.cpf.Text = "cpf";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(19, 424);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 32);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "excluir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(165, 424);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(84, 31);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "editar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Layout_site.Properties.Resources.Captura_de_tela_2023_09_06_124508;
+            this.BackgroundImage = global::Layout_site.Properties.Resources.istockphoto_1346365739_612x612;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(864, 551);
+            this.ClientSize = new System.Drawing.Size(792, 512);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cliente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mtextsenha);
             this.Controls.Add(this.lblCPF);
@@ -147,6 +218,7 @@
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,6 +237,14 @@
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.MaskedTextBox mtextsenha;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader email;
+        private System.Windows.Forms.ColumnHeader nome;
+        private System.Windows.Forms.ColumnHeader senha;
+        private System.Windows.Forms.ColumnHeader cpf;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListView cliente;
     }
 }
 

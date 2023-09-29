@@ -127,10 +127,13 @@
   <data name="ddfc87fa1fcb7f8fdf1e240327cc643b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ddfc87fa1fcb7f8fdf1e240327cc643b.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Captura de tela 2023-09-06 124508" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de tela 2023-09-06 124508.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1-RAL1015BR-COD.BE1015B00" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1-RAL1015BR-COD.BE1015B00.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Captura de tela 2023-09-06 124508" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Captura de tela 2023-09-06 124508.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1a56eaaaf78869d7c6e0e620b2b98394" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1a56eaaaf78869d7c6e0e620b2b983941.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

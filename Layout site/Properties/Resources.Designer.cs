@@ -73,6 +73,16 @@ namespace Layout_site.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1a56eaaaf78869d7c6e0e620b2b98394 {
+            get {
+                object obj = ResourceManager.GetObject("1a56eaaaf78869d7c6e0e620b2b98394", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_tela_2023_09_06_124508 {
             get {
                 object obj = ResourceManager.GetObject("Captura de tela 2023-09-06 124508", resourceCulture);

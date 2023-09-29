@@ -96,5 +96,8 @@
   <ItemGroup>
     <None Include="Resources\Captura de tela 2023-09-06 124508.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1a56eaaaf78869d7c6e0e620b2b983941.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
