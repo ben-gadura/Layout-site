@@ -155,31 +155,14 @@ namespace Layout_site
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
-
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"DELETE FROM cliente WHERE Id = @Id";
-            sqlCommand.Parameters.AddWithValue("@Id", Id);
-            try
-            {
-                sqlCommand.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
-
-            }
+            UserDAO userDAO = new UserDAO();
+            userDAO.DeleteUser(Id);
 
             texbemial.Clear();
             texnome.Clear();
             texcpf.Clear();
             mtextsenha.Clear();
-
+            
             UpdateListView();
         }
         private void texbemial_TextChanged(object sender, EventArgs e)
