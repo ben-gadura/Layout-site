@@ -25,76 +25,65 @@ namespace Layout_site
         private void UpdateListView()
         {
             cliente.Items.Clear();
+            UserDAO userDAO = new UserDAO();
+            List<User> users = userDAO.SelectUser();
 
-            Connection conn = new Connection();
-            SqlCommand sqlCom = new SqlCommand();
 
-            sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM cliente";
 
             try
             {
-                SqlDataReader dr = sqlCom.ExecuteReader();
-
-                while (dr.Read())
+                foreach (User user in users)
                 {
-                    Id = (int)dr["Id"];
-                    string email = (string)dr["emailcliente"];
-                    string name = (string)dr["nomecliente"];
-                    string pass = (string)dr["senha"];
-                    string cpf = (string)dr["cpf"];
-
-                    ListViewItem lv = new ListViewItem(Id.ToString());
-
-
+                    ListViewItem lv = new ListViewItem(user.Id.ToString);
                     lv.SubItems.Add(email);
                     lv.SubItems.Add(name);
                     lv.SubItems.Add(pass);
                     lv.SubItems.Add(cpf);
                     cliente.Items.Add(lv);
-
                 }
-                dr.Close();
+                
+
+
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-            }
-            finally
-            {
-                conn.CloseConnection();
             }
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                User user = new User( texbemial.Text,
+                    texnome.Text,
+                    mtextsenha.Text,
+                    texcpf.Text);
+
+                UserDAO userDAO = new UserDAO();
+                userDAO.InsertUser(user);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+                
+
+                MessageBox.Show("Cadastrado com sucesso",
+                    "AVISO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
 
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
+                texbemial.Clear();
+                texnome.Clear();
+                texcpf.Clear();
+                mtextsenha.Clear();
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO cliente VALUES (@emailcliente, @nomecliente, @senha, @cpf)";
-            sqlCommand.Parameters.AddWithValue("@emailcliente", texbemial.Text);
-            sqlCommand.Parameters.AddWithValue("@nomecliente", texnome.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", mtextsenha.Text);
-            sqlCommand.Parameters.AddWithValue("cpf", texcpf.Text);
+                UpdateListView();
+            
 
-            sqlCommand.ExecuteNonQuery();
-
-            MessageBox.Show("Cadastrado com sucesso",
-                "AVISO",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-
-            texbemial.Clear();
-            texnome.Clear();
-            texcpf.Clear();
-            mtextsenha.Clear();
-
-            UpdateListView();
         }
 
         private void cliente_MouseDoubleClick_1(object sender, MouseEventArgs e)
@@ -118,27 +107,6 @@ namespace Layout_site
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
-
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE cliente SET 
-             emailcliente = @emailcliente, 
-             nomecliente = @nomecliente,
-             senha = @senha, 
-             cpf = @cpf
-             WHERE Id   = @id"
-            ;
-
-            sqlCommand.Parameters.AddWithValue("@emailcliente", texbemial.Text);
-            sqlCommand.Parameters.AddWithValue("@nomecliente", texnome.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", mtextsenha.Text);
-            sqlCommand.Parameters.AddWithValue("cpf", texcpf.Text);
-            sqlCommand.Parameters.AddWithValue("@id", Id);
-
-
-            sqlCommand.ExecuteNonQuery();
 
             MessageBox.Show("Atualizado com sucesso",
                 "AVISO",
@@ -162,7 +130,7 @@ namespace Layout_site
             texnome.Clear();
             texcpf.Clear();
             mtextsenha.Clear();
-            
+             
             UpdateListView();
         }
         private void texbemial_TextChanged(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Layout_site
 {
-    public class usuario
+    internal class User
     {
         private int _id;
         private string _email;
@@ -14,56 +14,64 @@ namespace Layout_site
         private string _senha;
         private string _CPF;
 
-        public usuario(string email, string nome, string senha, string CPF)
+        public User(int id, string email, string nome, string senha, string CPF)
         {
+            this.id = id;
             this.nome = nome;
             this.email = email;
             this.senha = senha;
             this.CPF = CPF;
         }
 
-        public string id
+        public int id
         {
-            set {_id = value; }
+            set { _id = value; }
             get { return _id; }
         }
 
         public string nome
         {
-             
-        set {
+
+            set
+            {
                 if (string.IsNullOrEmpty(value))
-                    throw new Exception("O campo nome não esta preenchido corretamente"); 
-                _nome = value; }
+                    throw new Exception("O campo nome não esta preenchido corretamente");
+                _nome = value;
+            }
             get { return _nome; }
         }
 
         public string email
         {
-            set {
+            set
+            {
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo e-mail não esta preenchido corretamente");
-                _email = value; }
+                _email = value;
+            }
             get { return _email; }
         }
 
         public string senha
         {
-            set {
+            set
+            {
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo senha não esta preenchido corretamente");
-                _senha = value; }
+                _senha = value;
+            }
             get { return _senha; }
         }
 
         public string CPF
         {
-            set {
+            set
+            {
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo cpf não esta preenchido corretamente");
-                _CPF = value; }
+                _CPF = value;
+            }
             get { return _CPF; }
         }
-
     }
 }
