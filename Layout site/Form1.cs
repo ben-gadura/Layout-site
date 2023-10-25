@@ -16,11 +16,12 @@ namespace Layout_site
     
     public partial class Form1 : Form
     {
-        private int Id;
+        private int id;
         public Form1()
         {
             InitializeComponent();
             UpdateListView();
+        
         }
         private void UpdateListView()
         {
@@ -34,14 +35,14 @@ namespace Layout_site
             {
                 foreach (User user in users)
                 {
-                    ListViewItem lv = new ListViewItem(user.Id.ToString);
-                    lv.SubItems.Add(email);
-                    lv.SubItems.Add(name);
-                    lv.SubItems.Add(pass);
-                    lv.SubItems.Add(cpf);
+                    ListViewItem lv = new ListViewItem(user.id.ToString());
+                    lv.SubItems.Add(user.email);
+                    lv.SubItems.Add(user.nome);
+                    lv.SubItems.Add(user.senha);
+                    lv.SubItems.Add(user.CPF);
                     cliente.Items.Add(lv);
                 }
-                
+
 
 
             }
@@ -52,11 +53,12 @@ namespace Layout_site
         }
 
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                User user = new User( texbemial.Text,
+                User user = new User(id, texbemial.Text,
                     texnome.Text,
                     mtextsenha.Text,
                     texcpf.Text);
@@ -80,17 +82,16 @@ namespace Layout_site
                 texnome.Clear();
                 texcpf.Clear();
                 mtextsenha.Clear();
-
-                UpdateListView();
-            
-
+            UpdateListView();
         }
+
+        
 
         private void cliente_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
             int index;
             index = cliente.FocusedItem.Index;
-            Id = int.Parse(cliente.Items[index].SubItems[0].Text);
+            id = int.Parse(cliente.Items[index].SubItems[0].Text);
             texbemial.Text = cliente.Items[index].SubItems[1].Text;
             texnome.Text = cliente.Items[index].SubItems[2].Text;
             mtextsenha.Text = cliente.Items[index].SubItems[3].Text;
@@ -101,7 +102,6 @@ namespace Layout_site
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            UpdateListView();
         }
 
 
@@ -117,21 +117,17 @@ namespace Layout_site
             texnome.Clear();
             texcpf.Clear();
             mtextsenha.Clear();
-
-            UpdateListView();
         }
 
         private void button2_Click_2(object sender, EventArgs e)
         {
             UserDAO userDAO = new UserDAO();
-            userDAO.DeleteUser(Id);
+            userDAO.DeleteUser(id);
 
             texbemial.Clear();
             texnome.Clear();
             texcpf.Clear();
             mtextsenha.Clear();
-             
-            UpdateListView();
         }
         private void texbemial_TextChanged(object sender, EventArgs e)
         {
