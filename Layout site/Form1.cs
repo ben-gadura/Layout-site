@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Deployment.Internal;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Layout_site
         private int id;
         public Form1()
         {
+            
             InitializeComponent();
             UpdateListView();
         
@@ -83,7 +85,11 @@ namespace Layout_site
                 texcpf.Clear();
                 mtextsenha.Clear();
             UpdateListView();
+
+            Cardapio tela = new Cardapio();
+            tela.ShowDialog();
         }
+
 
         
 
@@ -107,6 +113,12 @@ namespace Layout_site
 
         private void button3_Click(object sender, EventArgs e)
         {
+            User user = new User(id, texbemial.Text,
+                    texnome.Text,
+                    mtextsenha.Text,
+                    texcpf.Text);
+            UserDAO nomedoobj = new UserDAO();
+            nomedoobj.UpdateUser(user ) ;
 
             MessageBox.Show("Atualizado com sucesso",
                 "AVISO",
@@ -117,6 +129,8 @@ namespace Layout_site
             texnome.Clear();
             texcpf.Clear();
             mtextsenha.Clear();
+
+            UpdateListView();
         }
 
         private void button2_Click_2(object sender, EventArgs e)
@@ -128,6 +142,8 @@ namespace Layout_site
             texnome.Clear();
             texcpf.Clear();
             mtextsenha.Clear();
+
+            UpdateListView();
         }
         private void texbemial_TextChanged(object sender, EventArgs e)
         {

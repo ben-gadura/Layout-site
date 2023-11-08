@@ -13,6 +13,39 @@ namespace Layout_site
 {
     internal class UserDAO
     {
+        public bool LoginUser (string nome, string senha)
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "SELECT * FROM cliente WHERE + nomecliente = @nomecliente AND senha = @senha";
+            
+            sqlCom.Parameters.AddWithValue("@nomecliente", nome);
+            sqlCom.Parameters.AddWithValue("@senha", senha);
+            try
+            {
+                SqlDataReader dr = sqlCom.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    
+                        dr.Close();
+                    return true;
+                   
+                }
+                dr.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+            return false;
+            
+        }
         public List<User> SelectUser()
         {
             Connection conn = new Connection();
@@ -52,7 +85,7 @@ namespace Layout_site
             }
             return null;
         }
-        public void UpdateUser(User user, int Id)
+        public void UpdateUser(User user)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -69,8 +102,8 @@ namespace Layout_site
             sqlCommand.Parameters.AddWithValue("@emailcliente", user.email);
             sqlCommand.Parameters.AddWithValue("@nomecliente", user.nome);
             sqlCommand.Parameters.AddWithValue("@senha", user.senha);
-            sqlCommand.Parameters.AddWithValue("cpf", user.CPF);
-            sqlCommand.Parameters.AddWithValue("@id", Id);
+            sqlCommand.Parameters.AddWithValue("@cpf", user.CPF);
+            sqlCommand.Parameters.AddWithValue("@id", user.id);
 
 
             sqlCommand.ExecuteNonQuery();
@@ -108,6 +141,8 @@ namespace Layout_site
                 connection.CloseConnection();
 
             }
+
+            
 
            
         }
