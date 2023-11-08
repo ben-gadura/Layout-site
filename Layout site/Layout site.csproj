@@ -75,6 +75,9 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserDAO.cs" />
+    <EmbeddedResource Include="Cardapio.resx">
+      <DependentUpon>Cardapio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +124,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1a56eaaaf78869d7c6e0e620b2b983941.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd6784eeaf9a9ea5e1ce19b1f8c575d8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd6784eeaf9a9ea5e1ce19b1f8c575d81.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd6784eeaf9a9ea5e1ce19b1f8c575d82.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de tela 2023-11-08 151930.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de tela 2023-11-08 1519301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3106921.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31069211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\924514.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9245141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6533293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6978255.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

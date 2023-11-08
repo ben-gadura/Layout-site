@@ -128,10 +128,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Layout_site.Properties.Resources._1a56eaaaf78869d7c6e0e620b2b98394;
-            this.pictureBox1.Location = new System.Drawing.Point(303, 12);
+            this.pictureBox1.Image = global::Layout_site.Properties.Resources.bd6784eeaf9a9ea5e1ce19b1f8c575d82;
+            this.pictureBox1.Location = new System.Drawing.Point(322, 151);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(489, 481);
+            this.pictureBox1.Size = new System.Drawing.Size(475, 368);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
@@ -199,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Layout_site.Properties.Resources.istockphoto_1346365739_612x612;
+            this.BackgroundImage = global::Layout_site.Properties.Resources.Captura_de_tela_2023_11_08_1519301;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(792, 512);
             this.Controls.Add(this.button3);

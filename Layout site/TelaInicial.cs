@@ -35,8 +35,8 @@ namespace Layout_site
 
             if (user.LoginUser(nome, senha))
             {
-                Form1 tela = new Form1();
-                tela.ShowDialog();
+                Cardapio telas = new Cardapio();
+                telas.ShowDialog();
             }
 
             else 
@@ -45,9 +45,9 @@ namespace Layout_site
                 MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-           
 
             
+
 
         }
 
@@ -55,6 +55,16 @@ namespace Layout_site
         {
             Form1 tela = new Form1();
             tela.ShowDialog();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     }
