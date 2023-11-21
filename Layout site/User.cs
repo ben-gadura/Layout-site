@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +36,7 @@ namespace Layout_site
 
             set
             {
+                if(value.Length < 3)
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo nome não esta preenchido corretamente");
                 _nome = value;
@@ -45,6 +48,16 @@ namespace Layout_site
         {
             set
             {
+               
+                    try
+                    {
+                        MailAddress m = new MailAddress(value);
+                    }
+                    catch (FormatException)
+                    {
+                    throw new Exception("O campo e-mail não esta valido"); ;
+                    }
+                
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo e-mail não esta preenchido corretamente");
                 _email = value;
@@ -56,6 +69,7 @@ namespace Layout_site
         {
             set
             {
+                if(value.Length<10)
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo senha não esta preenchido corretamente");
                 _senha = value;
@@ -67,11 +81,17 @@ namespace Layout_site
         {
             set
             {
+             
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo cpf não esta preenchido corretamente");
                 _CPF = value;
             }
             get { return _CPF; }
         }
+
+
     }
 }
+
+
+

@@ -81,6 +81,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Perfil.resx">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -157,6 +160,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\6978255.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd6784eeaf9a9ea5e1ce19b1f8c575d83.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bolo-no-pote.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0487_pao-de-queijo-super-lanche-1kg_m1_637789820725782874.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25282026-estoque-do-misturar-uma-copo-cafe-cafe-com-leite-mais-motivo-topo-visao-comidagrafia-generativo-ai-foto.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

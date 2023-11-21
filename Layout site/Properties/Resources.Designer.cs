@@ -63,6 +63,16 @@ namespace Layout_site.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0487_pao_de_queijo_super_lanche_1kg_m1_637789820725782874 {
+            get {
+                object obj = ResourceManager.GetObject("0487_pao-de-queijo-super-lanche-1kg_m1_637789820725782874", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1_RAL1015BR_COD_BE1015B00 {
             get {
                 object obj = ResourceManager.GetObject("1-RAL1015BR-COD.BE1015B00", resourceCulture);
@@ -76,6 +86,17 @@ namespace Layout_site.Properties {
         internal static System.Drawing.Bitmap _1a56eaaaf78869d7c6e0e620b2b98394 {
             get {
                 object obj = ResourceManager.GetObject("1a56eaaaf78869d7c6e0e620b2b98394", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _25282026_estoque_do_misturar_uma_copo_cafe_cafe_com_leite_mais_motivo_topo_visao_comidagrafia_generativo_ai_foto {
+            get {
+                object obj = ResourceManager.GetObject("25282026-estoque-do-misturar-uma-copo-cafe-cafe-com-leite-mais-motivo-topo-visao-" +
+                        "comidagrafia-generativo-ai-foto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +187,26 @@ namespace Layout_site.Properties {
         internal static System.Drawing.Bitmap bd6784eeaf9a9ea5e1ce19b1f8c575d82 {
             get {
                 object obj = ResourceManager.GetObject("bd6784eeaf9a9ea5e1ce19b1f8c575d82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bd6784eeaf9a9ea5e1ce19b1f8c575d83 {
+            get {
+                object obj = ResourceManager.GetObject("bd6784eeaf9a9ea5e1ce19b1f8c575d83", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bolo_no_pote {
+            get {
+                object obj = ResourceManager.GetObject("bolo-no-pote", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

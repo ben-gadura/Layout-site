@@ -37,5 +37,10 @@ namespace Layout_site
         {
 
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
