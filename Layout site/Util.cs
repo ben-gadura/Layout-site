@@ -9,6 +9,8 @@ namespace Layout_site
 {
     internal class Util
     {
+
+
         public static string CalculateMD5Hash(string input)
         {
             // Calcular o Hash
@@ -26,3 +28,4 @@ namespace Layout_site
         }
     }
 }
+

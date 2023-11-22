@@ -60,10 +60,10 @@ namespace Layout_site
             }
         }
 
-        
-
+ 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 User user = new User(id, texbemial.Text,
