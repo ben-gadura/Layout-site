@@ -125,6 +125,7 @@
             this.mtextsenha.PasswordChar = '*';
             this.mtextsenha.Size = new System.Drawing.Size(114, 20);
             this.mtextsenha.TabIndex = 11;
+            this.mtextsenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtextsenha_MaskInputRejected);
             // 
             // pictureBox1
             // 

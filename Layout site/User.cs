@@ -37,6 +37,9 @@ namespace Layout_site
             set
             {
                 if(value.Length < 3)
+                {
+                    throw new Exception("O campo nome ");
+                }
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo nome não esta preenchido corretamente");
                 _nome = value;
@@ -69,7 +72,10 @@ namespace Layout_site
         {
             set
             {
-                if(value.Length<10)
+                if (value.Length < 10)
+                {
+                    throw new Exception("O campo senha precisa de, no minimo, 10 caracteres");
+                }
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo senha não esta preenchido corretamente");
                 _senha = value;
@@ -81,7 +87,7 @@ namespace Layout_site
         {
             set
             {
-             
+            
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo cpf não esta preenchido corretamente");
                 _CPF = value;

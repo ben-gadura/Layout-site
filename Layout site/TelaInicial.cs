@@ -28,7 +28,7 @@ namespace Layout_site
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = textBox1.Text;
-            string senha = textBox2.Text;
+            string senha = Util.CalculateMD5Hash(textBox2.Text);
 
             UserDAO user = new UserDAO();
 
@@ -41,7 +41,7 @@ namespace Layout_site
 
             else 
             {
-                MessageBox.Show("Voce não tem uma conta", "AVISO",
+                MessageBox.Show("Voce não tem uma conta ou preencheu algum campo incorretamente", "AVISO",
                 MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
