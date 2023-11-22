@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,7 @@ namespace Layout_site
             }
         }
 
+        string d;
  
         private void button1_Click(object sender, EventArgs e)
         {
@@ -202,8 +204,17 @@ namespace Layout_site
 
 
         }
-        
+
+        private void texcpf_TextChanged(object sender, EventArgs e)
+        {
+
         }
+
+        private void textcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+    }
     }
 
 

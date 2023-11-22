@@ -87,7 +87,8 @@ namespace Layout_site
         {
             set
             {
-            
+              
+
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo cpf não esta preenchido corretamente");
                 _CPF = value;

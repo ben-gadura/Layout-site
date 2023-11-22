@@ -31,7 +31,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.texbemial = new System.Windows.Forms.TextBox();
             this.texnome = new System.Windows.Forms.TextBox();
-            this.texcpf = new System.Windows.Forms.TextBox();
             this.lblemial = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -46,6 +45,8 @@
             this.cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.texcpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,18 +70,11 @@
             // 
             // texnome
             // 
-            this.texnome.Location = new System.Drawing.Point(16, 98);
+            this.texnome.Location = new System.Drawing.Point(15, 98);
             this.texnome.Name = "texnome";
             this.texnome.Size = new System.Drawing.Size(117, 20);
             this.texnome.TabIndex = 3;
             this.texnome.TextChanged += new System.EventHandler(this.texnome_TextChanged);
-            // 
-            // texcpf
-            // 
-            this.texcpf.Location = new System.Drawing.Point(15, 210);
-            this.texcpf.Name = "texcpf";
-            this.texcpf.Size = new System.Drawing.Size(117, 20);
-            this.texcpf.TabIndex = 5;
             // 
             // lblemial
             // 
@@ -123,7 +117,7 @@
             this.mtextsenha.Location = new System.Drawing.Point(15, 151);
             this.mtextsenha.Name = "mtextsenha";
             this.mtextsenha.PasswordChar = '*';
-            this.mtextsenha.Size = new System.Drawing.Size(114, 20);
+            this.mtextsenha.Size = new System.Drawing.Size(117, 20);
             this.mtextsenha.TabIndex = 11;
             this.mtextsenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtextsenha_MaskInputRejected);
             // 
@@ -197,6 +191,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 16;
+            // 
+            // texcpf
+            // 
+            this.texcpf.Location = new System.Drawing.Point(15, 210);
+            this.texcpf.Mask = "000.000.000-00";
+            this.texcpf.Name = "texcpf";
+            this.texcpf.Size = new System.Drawing.Size(117, 20);
+            this.texcpf.TabIndex = 17;
+            this.texcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textcpf_MaskInputRejected);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +214,8 @@
             this.BackgroundImage = global::Layout_site.Properties.Resources.Captura_de_tela_2023_11_08_1519301;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(792, 512);
+            this.Controls.Add(this.texcpf);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cliente);
@@ -213,7 +225,6 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblemial);
-            this.Controls.Add(this.texcpf);
             this.Controls.Add(this.texnome);
             this.Controls.Add(this.texbemial);
             this.Controls.Add(this.button1);
@@ -232,7 +243,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox texbemial;
         private System.Windows.Forms.TextBox texnome;
-        private System.Windows.Forms.TextBox texcpf;
         private System.Windows.Forms.Label lblemial;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblSenha;
@@ -247,6 +257,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListView cliente;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox texcpf;
     }
 }
 
