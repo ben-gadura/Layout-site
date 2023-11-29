@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Layout_site
 {
@@ -61,17 +62,21 @@ namespace Layout_site
             }
         }
 
-        string d;
- 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+            private void button1_Click(object sender, EventArgs e)
         {
             
             try
             {
+                
+
                 User user = new User(id, texbemial.Text,
                     texnome.Text,
                     Util.CalculateMD5Hash(mtextsenha.Text),
-                    texcpf.Text);
+                    texcpf.Text.Replace(".", "").Replace("-", ""));
+
+                
 
                 UserDAO userDAO = new UserDAO();
                 userDAO.InsertUser(user);
@@ -84,6 +89,7 @@ namespace Layout_site
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
+              
             }
 
 
@@ -122,7 +128,8 @@ namespace Layout_site
 
         private void button3_Click(object sender, EventArgs e)
         {
-            User user = new User(id, texbemial.Text,
+            
+                        User user = new User(id, texbemial.Text,
                     texnome.Text,
                     Util.CalculateMD5Hash(mtextsenha.Text),
                     texcpf.Text);
@@ -155,9 +162,17 @@ namespace Layout_site
             UpdateListView();
         }
 
-        
+        private void texcpf_TextChanged(object sender, EventArgs e)
+        {
 
-            private void texbemial_TextChanged(object sender, EventArgs e)
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            UpdateListView();
+        }
+
+        private void texbemial_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -183,10 +198,7 @@ namespace Layout_site
 
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            UpdateListView();
-        }
+        
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
@@ -205,15 +217,32 @@ namespace Layout_site
 
         }
 
-        private void texcpf_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void textcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
+
+        private void texcpf_Leave(object sender, EventArgs e)
+        {
+            MessageBox.Show(texcpf.Text.Replace(".", "").Replace("-", ""),
+               "AVISO",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+            if (CPF.ValidateCpf(texcpf.Text.Replace(".", "").Replace("-", "")))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Campo cpf não valido",
+               "AVISO",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+            }
+        }
+
+        
     }
     }
 

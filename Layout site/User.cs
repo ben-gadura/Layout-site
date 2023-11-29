@@ -38,7 +38,7 @@ namespace Layout_site
             {
                 if(value.Length < 3)
                 {
-                    throw new Exception("O campo nome ");
+                    throw new Exception("O campo nome não esta preenchido corretamente");
                 }
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo nome não esta preenchido corretamente");
@@ -83,12 +83,12 @@ namespace Layout_site
             get { return _senha; }
         }
 
+
+
         public string CPF
         {
             set
             {
-              
-
                 if (string.IsNullOrEmpty(value))
                     throw new Exception("O campo cpf não esta preenchido corretamente");
                 _CPF = value;

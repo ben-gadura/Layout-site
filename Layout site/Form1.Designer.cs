@@ -45,7 +45,6 @@
             this.cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.texcpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -191,21 +190,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 16;
-            // 
             // texcpf
             // 
-            this.texcpf.Location = new System.Drawing.Point(15, 210);
-            this.texcpf.Mask = "000.000.000-00";
+            this.texcpf.Location = new System.Drawing.Point(14, 210);
+            this.texcpf.Mask = "000,000,000-00";
             this.texcpf.Name = "texcpf";
             this.texcpf.Size = new System.Drawing.Size(117, 20);
             this.texcpf.TabIndex = 17;
             this.texcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textcpf_MaskInputRejected);
+            this.texcpf.Leave += new System.EventHandler(this.texcpf_Leave);
             // 
             // Form1
             // 
@@ -215,7 +208,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(792, 512);
             this.Controls.Add(this.texcpf);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cliente);
@@ -232,6 +224,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);
+           
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -257,7 +250,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListView cliente;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox texcpf;
     }
 }
