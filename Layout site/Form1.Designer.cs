@@ -46,14 +46,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.texcpf = new System.Windows.Forms.MaskedTextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 476);
+            this.button1.Location = new System.Drawing.Point(19, 387);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 34);
+            this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "Clique aqui";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,9 +174,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(19, 424);
+            this.button2.Location = new System.Drawing.Point(19, 427);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 32);
+            this.button2.Size = new System.Drawing.Size(112, 32);
             this.button2.TabIndex = 14;
             this.button2.Text = "excluir";
             this.button2.UseVisualStyleBackColor = true;
@@ -182,9 +184,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(165, 424);
+            this.button3.Location = new System.Drawing.Point(19, 462);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 31);
+            this.button3.Size = new System.Drawing.Size(112, 31);
             this.button3.TabIndex = 15;
             this.button3.Text = "editar";
             this.button3.UseVisualStyleBackColor = true;
@@ -200,6 +202,26 @@
             this.texcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textcpf_MaskInputRejected);
             this.texcpf.Leave += new System.EventHandler(this.texcpf_Leave);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(147, 387);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(112, 34);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Gerar relatório";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(147, 427);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(112, 31);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Colocar endereço";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +229,8 @@
             this.BackgroundImage = global::Layout_site.Properties.Resources.Captura_de_tela_2023_11_08_1519301;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(792, 512);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.texcpf);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -224,7 +248,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);
-           
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -251,6 +274,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListView cliente;
         private System.Windows.Forms.MaskedTextBox texcpf;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
