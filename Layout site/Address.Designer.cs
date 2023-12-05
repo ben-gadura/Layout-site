@@ -161,6 +161,7 @@
             this.cidade,
             this.estado,
             this.telefone});
+            this.Adress.FullRowSelect = true;
             this.Adress.HideSelection = false;
             this.Adress.LabelEdit = true;
             this.Adress.Location = new System.Drawing.Point(338, 109);
@@ -208,6 +209,7 @@
             this.button3.TabIndex = 23;
             this.button3.Text = "editar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -217,6 +219,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "excluir";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -250,7 +253,9 @@
             this.Controls.Add(this.rua);
             this.Controls.Add(this.texrua);
             this.Name = "Address";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "address";
+            this.Load += new System.EventHandler(this.Address_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

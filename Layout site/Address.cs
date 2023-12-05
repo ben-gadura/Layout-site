@@ -17,35 +17,33 @@ namespace Layout_site
         private int idaddress;
         public Address()
         {
-
             InitializeComponent();
+            UpdateListView();
         }
         private void UpdateListView()
         {
             Adress.Items.Clear();
-            EndereçoDAO userDAO = new EndereçoDAO();
-            List<Endereço> users = userDAO.SelectAddress();
+            EndereçoDAO endereçoDAO = new EndereçoDAO();
+            List<Endereço> endereços = endereçoDAO.SelectAddress();
 
 
 
             try
             {
-                if (users.Count > 0)
+                if (endereços.Count > 0)
                 {
-                    foreach (Endereço user in users)
+                    foreach (Endereço endereço in endereços)
                     {
-                        ListViewItem lv = new ListViewItem(user.idaddress.ToString());
-                        lv.SubItems.Add(user.rua);
-                        lv.SubItems.Add(user.numero);
-                        lv.SubItems.Add(user.bairro);
-                        lv.SubItems.Add(user.cidade);
-                        lv.SubItems.Add(user.estado);
-                        lv.SubItems.Add(user.telefone);
+                        ListViewItem lv = new ListViewItem(endereço.idaddress.ToString());
+                        lv.SubItems.Add(endereço.rua);
+                        lv.SubItems.Add(endereço.numero);
+                        lv.SubItems.Add(endereço.bairro);
+                        lv.SubItems.Add(endereço.cidade);
+                        lv.SubItems.Add(endereço.estado);
+                        lv.SubItems.Add(endereço.telefone);
                         Adress.Items.Add(lv);
                     }
-
                 }
-
             }
             catch (Exception err)
             {
@@ -83,7 +81,7 @@ namespace Layout_site
             {
 
 
-                Endereço user = new Endereço(idaddress, 
+                Endereço endereço = new Endereço(idaddress, 
                     texrua.Text, 
                     texnumero.Text, 
                     texbairro.Text,
@@ -93,23 +91,61 @@ namespace Layout_site
 
 
 
-                EndereçoDAO userDAO = new EndereçoDAO();
-                userDAO.InsertUser(user);
+                EndereçoDAO endereçoDAO = new EndereçoDAO();
+                endereçoDAO.InsertAddress(endereço);
 
                 MessageBox.Show("Cadastrado com sucesso",
                    "AVISO",
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Information);
+
+                texrua.Clear();
+                texnumero.Clear();
+                texbairro.Clear();
+                texcidade.Clear();
+                texestado.Clear();
+                textelefone.Clear();
+                UpdateListView();
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
 
             }
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Endereço user = new Endereço(idaddress, texrua.Text, texnumero.Text, texbairro.Text, texcidade.Text
+        , texestado.Text
+        , textelefone.Text);
+            EndereçoDAO nomedoobj = new EndereçoDAO();
+            nomedoobj.UpdateAdress(user);
 
+            MessageBox.Show("Atualizado com sucesso",
+                "AVISO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
+            texrua.Clear();
+            texnumero.Clear();
+            texbairro.Clear();
+            texcidade.Clear();
+            texestado.Clear();
+            textelefone.Clear();
+            UpdateListView();
+        }
 
+        private void Address_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            EndereçoDAO endereçoDAO = new EndereçoDAO();
+            endereçoDAO.DeleteAddress(idaddress);
 
             texrua.Clear();
             texnumero.Clear();

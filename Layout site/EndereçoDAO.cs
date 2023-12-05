@@ -51,7 +51,7 @@ namespace Layout_site
 
             sqlCom.Connection = conn.ReturnConnection();
             sqlCom.CommandText = "SELECT * FROM address";
-            List<Endereço> users = new List<Endereço>();
+            List<Endereço> endereços = new List<Endereço>();
             try
             {
                 SqlDataReader dr = sqlCom.ExecuteReader();
@@ -61,7 +61,7 @@ namespace Layout_site
                 {
 
                     Endereço objeto = new Endereço(
-                    (int)dr["idadress"],
+                    (int)dr["idaddress"],
                     (string)dr["rua"],
                     (string)dr["numero"],
                     (string)dr["bairro"],
@@ -70,10 +70,10 @@ namespace Layout_site
                     (string)dr["telefone"]
                     );
 
-                    users.Add(objeto);
+                    endereços.Add(objeto);
                 }
                 dr.Close();
-                return users;
+                return endereços;
             }
             catch (Exception err)
             {
@@ -83,9 +83,9 @@ namespace Layout_site
             {
                 conn.CloseConnection();
             }
-            return null;
+            return endereços;
         }
-        public void UpdateUser(Endereço user)
+        public void UpdateAdress( Endereço user)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -109,32 +109,30 @@ namespace Layout_site
             sqlCommand.Parameters.AddWithValue("@telefone", user.telefone);
             sqlCommand.Parameters.AddWithValue("@idaddress", user.idaddress);
 
-
             sqlCommand.ExecuteNonQuery();
         }
-        public void InsertUser(Endereço user)
+        public void InsertAddress(Endereço user)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO address VALUES (@rua, @numero, @bairro, @cidade, @estado, @telefone, @idaddress)";
+            sqlCommand.CommandText = @"INSERT INTO address VALUES (@rua, @numero, @bairro, @cidade, @estado, @telefone)";
             sqlCommand.Parameters.AddWithValue("@rua", user.rua);
             sqlCommand.Parameters.AddWithValue("@numero", user.numero);
             sqlCommand.Parameters.AddWithValue("@bairro", user.bairro);
             sqlCommand.Parameters.AddWithValue("@cidade", user.cidade);
             sqlCommand.Parameters.AddWithValue("@estado", user.estado);
             sqlCommand.Parameters.AddWithValue("@telefone", user.telefone);
-            sqlCommand.Parameters.AddWithValue("@idaddress", user.idaddress);
             sqlCommand.ExecuteNonQuery();
         }
-        public void DeleteUser(int Idaddress)
+        public void DeleteAddress(int idaddress)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"DELETE FROM address WHERE idaddress = @idaddress";
-            sqlCommand.Parameters.AddWithValue("@idaddress", Idaddress);
+            sqlCommand.Parameters.AddWithValue("@idaddress", idaddress);
             try
             {
                 sqlCommand.ExecuteNonQuery();

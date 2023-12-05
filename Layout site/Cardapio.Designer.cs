@@ -220,6 +220,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Name = "Cardapio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cardapio";
             this.Load += new System.EventHandler(this.Cardapio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
