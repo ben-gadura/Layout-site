@@ -97,7 +97,7 @@ namespace Layout_site
              bairro = @bairro,
              cidade = @cidade,
              estado = @estado,
-             telefone = @telefone,
+             telefone = @telefone
              WHERE idaddress = @idaddress"
             ;
 
