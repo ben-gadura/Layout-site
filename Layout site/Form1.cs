@@ -29,9 +29,7 @@ namespace Layout_site
         private int id;
         public Form1()
         {
-
             InitializeComponent();
-
 
         }
         private void UpdateListView()
@@ -79,8 +77,6 @@ namespace Layout_site
                     Util.CalculateMD5Hash(mtextsenha.Text),
                     texcpf.Text.Replace(".", "").Replace("-", ""));
 
-
-
                 UserDAO userDAO = new UserDAO();
                 userDAO.InsertUser(user);
 
@@ -94,9 +90,6 @@ namespace Layout_site
                 MessageBox.Show(erro.Message);
 
             }
-
-
-
 
 
             texbemial.Clear();
