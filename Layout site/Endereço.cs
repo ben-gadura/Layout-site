@@ -32,38 +32,73 @@ namespace Layout_site
         public int idaddress {
             get { return _idaddress; }
             set { _idaddress = value; }
+
         }
         public string rua
         {
             get { return _rua; }
-            set { _rua = value; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("O campo rua não esta preenchido corretamente");
+                _rua = value;
+
+                _rua = value; }
         }
         public string numero
         {
             get { return _numero; }
-            set { _numero = value; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("O campo numero não esta preenchido corretamente");
+                _numero = value;
+                _numero = value; }
         }
 
         public string bairro
         {
             get { return _bairro; }
-            set { _bairro = value; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("O campo bairro não esta preenchido corretamente");
+                _bairro = value;
+
+                _bairro = value; }
         }
 
-        public string cidade { get { return _cidade; }
-            set { _cidade = value; } } 
+        public string cidade 
+        { 
+            get { return _cidade; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("O campo cidade não esta preenchido corretamente");
+                _cidade = value;
+
+                _cidade = value; } 
+        } 
 
 
-        public string estado  {  get { return _estado; }
-            set { _estado = value; }
+        public string estado  
+        {  
+            get { return _estado; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("O campo estado não esta preenchido corretamente");
+                _estado = value;
+
+                _estado = value; }
         }
 
 
-        public string telefone { get { return _telefone; }
-            set
-            {
+        public string telefone 
+        { 
+            get { return _telefone; }
+            set{
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("O campo telefone não esta preenchido corretamente");
                 _telefone = value;
-            } }    
+                _telefone = value;
+                } 
+        }    
 
      
 
